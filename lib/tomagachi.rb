@@ -1,11 +1,9 @@
 class Tomagachi
   define_method(:initialize) do |name|
-
     @name = name
     @food_level = 10
     @happiness_level = 10
     @energy_level = 10
-
   end
 
   define_method(:name) do
@@ -22,6 +20,14 @@ class Tomagachi
 
   define_method(:energy_level) do
     @energy_level
+  end
+
+  define_method(:is_alive?) do
+    if food_level() <= 0
+      false
+    else
+      true
+    end
   end
 
 end

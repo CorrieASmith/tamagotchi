@@ -11,4 +11,12 @@ describe(Tomagachi) do
       expect(tom.energy_level()).to(eq(10))
     end
   end
+
+  describe('#is_alive?') do
+    it("says the Tomagachi is alive if life is above 0") do
+      tom = Tomagachi.new("Coriander")
+      expect(tom.is_alive?()).to(eq(true))
+    end
+  end
+
 end
