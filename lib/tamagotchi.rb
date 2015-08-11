@@ -4,6 +4,7 @@ class Tamagotchi
     @food_level = 10
     @happiness_level = 10
     @energy_level = 10
+    @time_fed = Time.new
   end
 
   define_method(:name) do
@@ -36,6 +37,16 @@ class Tamagotchi
 
   define_method(:time_passes) do
     @food_level -= 1
+  end
+
+  define_method(:check_time) do
+    now = Time.new
+    time_passed = now - @time_fed
+    i = 3600
+    until i > time_passed
+      time_passes()
+      i += 3600
+    end
   end
 
   # define_method(:clear) do

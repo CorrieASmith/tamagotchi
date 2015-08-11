@@ -34,6 +34,10 @@ describe(Tamagotchi) do
       my_pet.time_passes()
       expect(my_pet.food_level()).to(eq(9))
     end
+    it("decreases the food level if time passed has been 1 hour") do
+      my_pet = Tamagotchi.new("Coriander")
+      my_pet.check_time()
+      expect(my_pet.food_level()).to(eq(10))
+    end
   end
-
 end
