@@ -1,5 +1,6 @@
 class Tamagotchi
-  
+  @@tamagotchis = []
+
   define_method(:initialize) do |name|
     @name = name
     @food_level = 10
@@ -50,7 +51,15 @@ class Tamagotchi
     end
   end
 
-  # define_method(:clear) do
-  #
-  # end
+  define_singleton_method(:all) do
+    @@tamagotchis
+  end
+
+  define_method(:save) do
+    @@tamagotchis.push(self)
+  end
+
+  define_singleton_method(:clear) do
+    @@tamagotchis = []
+  end
 end
