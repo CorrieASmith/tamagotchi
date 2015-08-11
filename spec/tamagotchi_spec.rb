@@ -37,4 +37,12 @@ describe(Tamagotchi) do
       expect(my_pet.food_level()).to(eq(10))
     end
   end
+
+  describe('#feed') do
+    it("increases food level by 1") do
+      my_pet = Tamagotchi.new("Coriander")
+      my_pet.feed()
+      expect(my_pet.food_level()).to(eq(11))
+    end
+  end
 end

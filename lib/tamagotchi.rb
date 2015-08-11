@@ -52,4 +52,8 @@ class Tamagotchi
       @time_fed = Time.new
     end
   end
+
+  define_method(:feed) do
+    @food_level += 1
+  end
 end
