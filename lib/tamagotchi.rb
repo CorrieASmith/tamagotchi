@@ -34,6 +34,10 @@ class Tamagotchi
     @food_level = level
   end
 
+  define_method(:time_passes) do
+    @food_level -= 1
+  end
+
   # define_method(:clear) do
   #
   # end
