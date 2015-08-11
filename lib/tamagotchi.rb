@@ -1,4 +1,5 @@
 class Tamagotchi
+  
   define_method(:initialize) do |name|
     @name = name
     @food_level = 10
@@ -42,10 +43,10 @@ class Tamagotchi
   define_method(:check_time) do
     now = Time.new
     time_passed = now - @time_fed
-    i = 3600
+    i = 10
     until i > time_passed
       time_passes()
-      i += 3600
+      i += 10
     end
   end
 
