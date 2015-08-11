@@ -2,9 +2,6 @@ require('rspec')
 require('tamagotchi')
 
 describe(Tamagotchi) do
-  before() do
-    Tamagotchi.clear()
-  end
 
   describe('#initialize') do
     it("sets the name and life levels of a new Tamagotchi") do
@@ -25,28 +22,6 @@ describe(Tamagotchi) do
       my_pet = Tamagotchi.new("Evil Coriander")
       my_pet.set_food_level(0)
       expect(my_pet.is_alive?()).to(eq(false))
-    end
-  end
-
-  describe('.all') do
-    it("is empty at first") do
-      expect(Tamagotchi.all()).to(eq([]))
-    end
-  end
-
-  describe('#save') do
-    it("saves new task with save method") do
-      test_task = Tamagotchi.new("Go To School")
-      test_task.save()
-      expect(Tamagotchi.all()).to(eq([test_task]))
-    end
-  end
-
-  describe('.clear') do
-    it("empties all of the saved tasks") do
-      Tamagotchi.new("Go To School")
-      Tamagotchi.clear()
-      expect(Tamagotchi.all()).to(eq([]))
     end
   end
 

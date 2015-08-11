@@ -1,5 +1,4 @@
 class Tamagotchi
-  @@tamagotchis = []
 
   define_method(:initialize) do |name|
     @name = name
@@ -49,17 +48,8 @@ class Tamagotchi
       time_passes()
       i += 10
     end
-  end
-
-  define_singleton_method(:all) do
-    @@tamagotchis
-  end
-
-  define_method(:save) do
-    @@tamagotchis.push(self)
-  end
-
-  define_singleton_method(:clear) do
-    @@tamagotchis = []
+    if i > 10
+      @time_fed = Time.new
+    end
   end
 end
